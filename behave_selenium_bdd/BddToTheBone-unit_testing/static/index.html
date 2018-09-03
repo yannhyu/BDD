@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>PAT.LY URL SHORTENER</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/patly.js"></script>
+</head>
+
+<body>
+    <a href="/static/image-license.html"><img id="logo" src="/static/Logomakr_6TAnrK.png"></a>
+    <br />
+    <span>Enter in a URL, and we'll give you a new one that's much shorter!</span>
+    <br />
+    <br />
+    <label for="input"><span>Enter URL: </span></label><input type="text" id="input"></input>
+    <input type="button" id="get-short-link" value="Get me a short link!"></input>
+    <br />
+    <span id="return-link"></span>
+    <br />
+    <br />
+    <table id="stats">
+        <tr>
+            <th>URL</th>
+            <th># Redirects</th>
+        </tr>
+    </table>
+    <div class="footer"> <a href="/static/image-license.html">Image Credits</a> </div>
+</body>
+
+</html>

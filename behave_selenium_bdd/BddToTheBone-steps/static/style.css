@@ -1,0 +1,39 @@
+span {
+    color: #1b96fe;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+table,
+td,
+th {
+    text-align: center;
+    border: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1b96fe;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1bd6fe;
+}
+
+#get-short-link {
+    background-color: #1b96fe;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#stats {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
