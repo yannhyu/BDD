@@ -1,0 +1,15 @@
+The steps that Behave runs are written in Python and they are the link between the descriptive tests in .feature files and the actual application code. Go ahead and open steps.py and add the following imports:
+
+from behave import *
+from twentyone import *
+
+
+Behave steps use annotations that match the names of the phases. This is the first step as described in the scenario:
+
+@given('a dealer')
+def step_impl(context):
+    context.dealer = Dealer()
+
+It's important to notice that the text inside of the annotation matches the scenario text exactly. If it doesn't match, the test cannot run.
+
+The context object is passed from step to step, and it is where we can store information to be used by other steps. Since this step is a "given", we need to initialize our state. We do that by creating a Dealer object, and attaching that object to the context. If you run behave again, you'll see the test fails, but now for a different reason: We haven't defined the Dealer class yet! Again, we have a failing test that is "driving" us to do work.    

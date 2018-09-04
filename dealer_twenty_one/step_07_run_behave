@@ -1,0 +1,15 @@
+(bdd) carlos@carlos-G73Jh:~/Documents/dev/bddcode/dealer_twenty_one$ behave
+Feature: The dealer for the game of 21 # features/dealer.feature:1
+
+  @dealer-kick-off
+  Scenario: Deal initial cards             # features/dealer.feature:4
+    Given a dealer                         # features/steps/steps.py:4 0.000s
+    When the round starts                  # features/steps/steps.py:8 0.000s
+    Then the dealer gives itself two cards # features/steps/steps.py:12 0.000s
+
+1 feature passed, 0 failed, 0 skipped
+1 scenario passed, 0 failed, 0 skipped
+3 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m0.001s
+
+

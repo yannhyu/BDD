@@ -1,0 +1,24 @@
+the annotation text matches the text in the scenario exactly. In the "when" step, we have access to the dealer created in "given" and we can now call a method on that object. Finally, in the "then" step, we still have access to the dealer, and we assert that the dealer has two cards in its hand.
+
+We defined two new pieces of code that need to be implemented: new_round() and hand. Switch back to twentyone.py and add the following to the Dealer class:
+
+class Dealer():
+    def __init__(self):
+        self.hand = []
+
+    def new_round(self):
+        self.hand = [_next_card(), _next_card()]
+
+
+++++++++++++++++++++++++++++++++++++++++++
+
+
+The _next_card() function will be defined as a top-level function of the module, along with a definition of the cards. At the top of the file, add the following:
+
+import random
+
+_cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+
+def _next_card():
+    return random.choice(_cards)

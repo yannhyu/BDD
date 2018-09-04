@@ -1,0 +1,25 @@
+Writing Your First Test
+
+we'll start with the tests.
+
+Writing the Scenario
+
+Open dealer.feature and add the following first line:
+
+Feature: The dealer for the game of 21
+
+This line describes the feature. In a large application, you would have many features. Next, we'll add a test. The first test will be simple — when the round starts, the dealer should deal itself two cards. The word Behave uses to define a test is "Scenario", so go ahead and add the following line:
+
+Scenario: Deal initial cards
+
++++++++++++++++++++++++++++++++++++++++++++
+
+to understand the three phases of a basic Behave test: "Given", "When", and "Then". "Given" initializes a state, "When" describes an action, and "Then" states the expected outcome. For this test, our state is a new dealer object, the action is the round starting, and the expected outcome is that the dealer has two cards. Here's how this is translated into a Behave test:
+
+Scenario: Deal initial cards
+  Given a dealer
+  When the round starts
+  Then the dealer gives itself two cards
+
+
+  

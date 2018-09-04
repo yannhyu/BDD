@@ -1,0 +1,82 @@
+If you run behave again, you'll see the test fails, but now for a different reason: We haven't defined the Dealer class yet! Again, we have a failing test that is "driving" us to do work.
+
+++++++++++++++++++++++++++++++
+(bdd) carlos@carlos-G73Jh:~/Documents/dev/bddcode/dealer_twenty_one$ behave
+Feature: The dealer for the game of 21 # features/dealer.feature:1
+
+  @dealer-kick-off
+  Scenario: Deal initial cards             # features/dealer.feature:4
+    Given a dealer                         # features/steps/steps.py:4 0.035s
+      Traceback (most recent call last):
+        File "/home/carlos/Documents/dev/bdd/lib/python3.6/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/carlos/Documents/dev/bdd/lib/python3.6/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/steps.py", line 6, in step_impl
+          context.dealer = Dealer()
+      NameError: name 'Dealer' is not defined
+
+    When the round starts                  # None
+    Then the dealer gives itself two cards # None
+
+
+Failing scenarios:
+  features/dealer.feature:4  Deal initial cards
+
+0 features passed, 1 failed, 0 skipped
+0 scenarios passed, 1 failed, 0 skipped
+0 steps passed, 1 failed, 0 skipped, 2 undefined
+Took 0m0.035s
+
+You can implement step definitions for undefined steps with these snippets:
+
+@when(u'the round starts')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When the round starts')
+
+
+@then(u'the dealer gives itself two cards')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the dealer gives itself two cards')
+
+
+++++++++++++++++++++++++++++++
+
+Now we will open twentyone.py and create a Dealer class:
+
+class Dealer():
+    pass
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Run behave once again to verify that we fixed the last error we saw, but that the scenario still fails because the "when" and "then" steps are not implemented. From here on, the tutorial will not explicitly state when you should run behave. But remember, the cycle is to write a test, see that it fails, and then write code to make the test pass.
+
+(bdd) carlos@carlos-G73Jh:~/Documents/dev/bddcode/dealer_twenty_one$ behave
+Feature: The dealer for the game of 21 # features/dealer.feature:1
+
+  @dealer-kick-off
+  Scenario: Deal initial cards             # features/dealer.feature:4
+    Given a dealer                         # features/steps/steps.py:4 0.000s
+    When the round starts                  # None
+    Then the dealer gives itself two cards # None
+
+
+Failing scenarios:
+  features/dealer.feature:4  Deal initial cards
+
+0 features passed, 1 failed, 0 skipped
+0 scenarios passed, 1 failed, 0 skipped
+1 step passed, 0 failed, 0 skipped, 2 undefined
+Took 0m0.000s
+
+You can implement step definitions for undefined steps with these snippets:
+
+@when(u'the round starts')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When the round starts')
+
+
+@then(u'the dealer gives itself two cards')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the dealer gives itself two cards')

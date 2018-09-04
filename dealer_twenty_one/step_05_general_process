@@ -1,0 +1,15 @@
+Run behave once again to verify that we fixed the last error we saw, but that the scenario still fails because the "when" and "then" steps are not implemented. From here on, the tutorial will not explicitly state when you should run behave. But remember, the cycle is to write a test, see that it fails, and then write code to make the test pass.
+
+Here are the next steps to add to steps.py:
+
+@when('the round starts')
+def step_impl(context):
+    context.dealer.new_round()
+
+
+@then('the dealer gives itself two cards')
+def step_impl(context):
+    assert (len(context.dealer.hand) == 2)
+
+
+    

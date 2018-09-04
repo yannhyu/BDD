@@ -1,0 +1,20 @@
+This tutorial will walk you through writing tests for and coding a feature of a Twenty-One (or "Blackjack") game. Specifically, we'll be testing the logic for the dealer. To get started, create a root directory where your code will go, and then create the following directories and blank files:
+
+.
+├── features
+│   ├── dealer.feature
+│   └── steps
+│       └── steps.py
+└── twentyone.py
+
+Here's a brief explanation of the files:
+
+    dealer.feature: The written out tests for the dealer feature.
+    steps.py: The code that runs the tests in dealer.feature.
+    twentyone.py: The implementation code for the dealer feature.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+https://semaphoreci.com/community/tutorials/getting-started-with-behavior-testing-in-python-with-behave
+
